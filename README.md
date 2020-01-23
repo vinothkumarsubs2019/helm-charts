@@ -35,3 +35,24 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+#######################################################################
+  kubectl create serviceaccount --namespace kube-system tiller
+  kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+  kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+  cat tiller.yaml
+  kubectl apply -f tiller.yaml
+  kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+  helm install --name demo mychart-0.1.1.tgz
+  kubectl get pods --all-namespaces
+  kubectl describe pod tiller-deploy-5b9cc85cf4-82vhx -n kube-system
+  kubectl get nodes
+  kubectl uncordon ip-172-31-86-85.ec2.internal
+  kubectl get nodes
+  kubectl describe pod tiller-deploy-5b9cc85cf4-82vhx -n kube-system
+  helm install --name demo mychart-0.1.1.tgz
+  kubectl delete ns kubernetes-dashboard
+  helm install --name demo mychart-0.1.1.tgz
+  helm del --purge demo
+  helm install --name demo mychart-0.1.1.tgz
+#######################################################################################################
