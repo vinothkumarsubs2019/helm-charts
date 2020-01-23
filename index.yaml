@@ -8,7 +8,7 @@ entries:
     digest: fd07b9d36562c0e724130c41f77d2e1be747a7dbe7f855da96ad364e1220b007
     name: mychart
     urls:
-    - https://kmayer10.github.io/helm-charts/mychart-0.1.1.tgz
+    - https://vinothkumarsubs2019.github.io/helm-charts/mychart-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
@@ -17,6 +17,6 @@ entries:
     digest: 6c00f889b6e035306bf92281e0af494906577bd5f0c71030dfe9db3d40c1fc6d
     name: mychart
     urls:
-    - https://kmayer10.github.io/helm-charts/mychart-0.1.0.tgz
+    - https://vinothkumarsubs2019.github.io/helm-charts/mychart-0.1.0.tgz
     version: 0.1.0
 generated: 2020-01-22T18:02:36.70709308Z
