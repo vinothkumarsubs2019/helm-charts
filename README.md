@@ -56,3 +56,18 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
   helm del --purge demo
   helm install --name demo mychart-0.1.1.tgz
 #######################################################################################################
+
+#######################
+Confnigure-helm.sh
+#########################
+
+
+#!/bin/bash
+yum install -y wget
+wget https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-amd64.tar.gz
+tar -zxvf helm-v2.12.2-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/bin/helm
+kubectl -n kube-system create sa tiller
+kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
+helm init --service-account tiller
+kubectl create namespace kubeapps
